@@ -14,7 +14,7 @@ import CardPerfil from './pages/perfil/cardperfil/CardPerfil'
 import FormPerfil from './pages/perfil/formperfil/FormPerfil'
 import DeletarPerfil from './pages/perfil/deletarperfil/DeletarPerfil'
 import Sobre from './components/sobre/Sobre'
-import DeletarTreino from './pages/treino/deletartreino/DeletarTreino'
+import RemoverTreino from './pages/treino/removertreino/RemoverTreino'
 
 export default function App() {
 
@@ -34,7 +34,7 @@ export default function App() {
                 <Route path='/treinos' element={<ListaTreino />}></Route>
                 <Route path='/criartreino' element={<FormTreino />}></Route>
                 <Route path='/editartreino/:id' element={<FormTreino />}></Route>
-                <Route path='/deletartreino/:id' element={<DeletarTreino />}></Route>
+                <Route path='/deletartreino/:id' element={<RemoverTreino />}></Route>
                 <Route path='/perfil' element={<CardPerfil />}></Route>
                 <Route path='/editarperfil/:id' element={<FormPerfil />}></Route>
                 <Route path='/deletarperfil/:id' element={<DeletarPerfil />}></Route>

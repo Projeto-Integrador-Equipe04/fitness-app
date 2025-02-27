@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import Treino from "../../../model/Treino"
+import { useEffect, useState } from "react"
 import { buscar, deletar } from "../../../services/service"
 import { Alerta } from "../../../utils/Alerta"
 import { RotatingLines } from "react-loader-spinner"
 
-export default function DeletarTreino() {
+export default function RemoverTreino() {
 
     const navigate = useNavigate()
     const [treino, setTreino] = useState<Treino>({} as Treino)
