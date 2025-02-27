@@ -11,7 +11,7 @@ export default function Login() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (usuario.id != null) {
+        if (usuario?.id != null) {
             navigate('/treinos')
         }
     }, [usuario])
@@ -59,7 +59,7 @@ export default function Login() {
                     <hr className="border-slate-800 w-full" />
 
                     <p> Ainda não tem uma conta?{' '} </p>
-                    <p> <Link to="/planos" className="text-black text-center hover:underline">Cadastre-se</Link> </p>
+                    <p> <Link to="/planos" className="text-black text-xl text-center hover:underline">Cadastre-se</Link> </p>
                 </form>
 
                 <img src="/home2.svg" alt="" className="hidden lg:block w-4/6"/>

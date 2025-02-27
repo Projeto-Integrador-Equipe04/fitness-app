@@ -10,7 +10,11 @@ import { ToastContainer } from 'react-toastify'
 import ListaPlanos from './pages/plano/listaplanos/ListaPlanos'
 import ListaTreino from './pages/treino/listatreino/ListaTreino'
 import FormTreino from './pages/treino/formtreino/formtreino'
-import DeletarTreino from './pages/treino/deletarTreino/DeletarTreino'
+import DeletarTreino from './pages/treino/deletartreino/DeletarTreino'
+import CardPerfil from './pages/perfil/cardperfil/CardPerfil'
+import FormPerfil from './pages/perfil/formperfil/FormPerfil'
+import DeletarPerfil from './pages/perfil/deletarperfil/DeletarPerfil'
+import Sobre from './components/sobre/Sobre'
 
 export default function App() {
 
@@ -31,6 +35,10 @@ export default function App() {
                 <Route path='/criartreino' element={<FormTreino />}></Route>
                 <Route path='/editartreino/:id' element={<FormTreino />}></Route>
                 <Route path='/deletartreino/:id' element={<DeletarTreino />}></Route>
+                <Route path='/perfil' element={<CardPerfil />}></Route>
+                <Route path='/editarperfil/:id' element={<FormPerfil />}></Route>
+                <Route path='/deletarperfil/:id' element={<DeletarPerfil />}></Route>
+                <Route path='/sobre' element={<Sobre />}></Route>
               </Routes>
               <Footer />
             </div>

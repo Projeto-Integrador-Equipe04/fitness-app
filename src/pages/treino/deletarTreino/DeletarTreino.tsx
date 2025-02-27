@@ -36,7 +36,7 @@ export default function DeletarTreino() {
 
         try {
             await deletar(`/treinos/${id}`)
-            Alerta('Tema apagado com sucesso', "sucesso")
+            Alerta('Treino apagado com sucesso', "sucesso")
 
         } catch (error: any) {
             Alerta(`Erro ao apagar treino, erro: ${error}`, "erro")
@@ -48,10 +48,10 @@ export default function DeletarTreino() {
     
     return (
         <div className='container w-1/3 mx-auto'>
-            <h1 className='text-4xl text-center my-4'>Deletar treino</h1>
-            <p className='text-center font-semibold mb-4'>
+            <div className='flex flex-col rounded-2xl shadow-xl overflow-hidden justify-between'>
+                <h1 className='text-4xl text-center my-4'>Deletar treino</h1>
+                <p className='text-center font-semibold mb-4'>
                 Você tem certeza de que deseja apagar o treino a seguir?</p>
-            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
                 <header className='py-4 px-6 text-black text-xl text-center'>{treino.exercicio}</header>
                 <p className='p-4 text-lg h-full'>Carga: {treino.carga}</p>
                 <p className='p-4 text-lg h-full'>Nª de series: {treino.serie}</p>

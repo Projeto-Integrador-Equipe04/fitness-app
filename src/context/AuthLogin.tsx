@@ -38,17 +38,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
 
     function handleLogout() {
-        setUsuario({
-            id: 0,
-            nome: "",
-            usuario: "",
-            senha: "",
-            foto: "",
-            peso: 0,
-            altura: "",
-            treinos: null,
-            plano: null
-        })
+        setUsuario({} as Usuario);
+        setTreino([]);
     }
 
     return (

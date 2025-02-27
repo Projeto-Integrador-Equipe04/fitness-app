@@ -7,7 +7,7 @@ interface CardTreinoProps{
 
 export default function CardTreino({ treino }: CardTreinoProps) {
     return (
-        <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
+        <div className='flex flex-col shadow-xl rounded-2xl overflow-hidden justify-between'>
             <header className='py-4 px-6 text-black text-xl text-center'>{treino.exercicio}</header>
             <p className='p-4 text-lg h-full'>Carga: {treino.carga}</p>
             <p className='p-4 text-lg h-full'>Nª de series: {treino.serie}</p>
@@ -18,7 +18,7 @@ export default function CardTreino({ treino }: CardTreinoProps) {
                 <button>Editar</button>
             </Link>
 
-            <Link to={`/deletartreino/${treino.id}`} className='text-black border bg-slate-50 hover:bg-red-500 hover:text-white hover:underline w-full flex items-center justify-center'>
+            <Link to={`/deletartreino/${treino.id}`} className='text-black border bg-slate-50 hover:border-red-500 hover:bg-red-500 hover:text-white hover:underline w-full flex items-center justify-center'>
                 <button>Deletar</button>
             </Link>
             </div>

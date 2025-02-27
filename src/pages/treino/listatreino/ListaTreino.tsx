@@ -10,9 +10,9 @@ import Treino from "../../../model/Treino";
 export default function ListaTreino() {
 
     const navigate = useNavigate();
-    const { usuario, setUsuario, handleLogout } = useContext(AuthContext);
+    const { usuario, setUsuario } = useContext(AuthContext);
     const [treino, setTreino] = useState<Treino[]>([]);
-    const idUsuario: string = usuario.id.toString();
+    const idUsuario: string = usuario?.id.toString();
 
     async function buscarUsuarioPorId(id: string){
         try{
@@ -32,21 +32,19 @@ export default function ListaTreino() {
         }
     }, [usuario]);
 
-    //CAUSANDO BUG
-    // useEffect(() => {
-    //     if(usuario.id === 0){
-    //         Alerta("Você precisa estar logado!", "erro")
-    //         handleLogout()
-    //         navigate("/")
-    //     }
-    // }, [usuario])
+    useEffect(() => {
+        if(usuario.id === undefined && usuario.id === 0){
+            Alerta("Você precisa estar logado!", "erro")
+            navigate("/")
+        }
+    }, [usuario])
     
     return (
         <>
             <div className="flex justify-center">
                 {treino.length === 0 && (<RotatingLines strokeColor="black" strokeWidth="1.5" animationDuration="0.75" width="100" visible={true} /> )}
             </div>
-            <div className="flex justify-center w-full my-4">
+            <div className="flex justify-center w-full mb-44">
                 <div className="container flex flex-col">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {treino.map((treino) => (

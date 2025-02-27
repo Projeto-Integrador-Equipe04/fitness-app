@@ -28,7 +28,7 @@ export default function ListaPlanos(){
             <div className="flex justify-center">
                 {planos.length === 0 && (<RotatingLines strokeColor="black" strokeWidth="1.5" animationDuration="0.75" width="100" visible={true} /> )}
             </div>
-            <div className="flex justify-center w-full">
+            <div className="flex justify-center w-full mb-44">
                 <div className="container flex flex-col">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {planos.map((plano) => (

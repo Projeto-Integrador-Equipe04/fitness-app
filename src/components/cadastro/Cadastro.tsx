@@ -155,8 +155,8 @@ export default function Cadastro() {
             />
           </div>
           <div className="flex justify-around w-full gap-8">
-            <Link to={"/login"} className='rounded text-white bg-red-400 hover:bg-red-700 w-1/2 py-2 text-center'>Cancelar</Link>
-            <button type='submit' className='rounded text-white bg-indigo-400 hover:bg-indigo-900 w-1/2 py-2 flex justify-center'>
+            <Link to={"/login"} className='rounded-md text-black text-center border-2 border-black hover:border-red-500 hover:bg-red-500 hover:text-white hover:underline w-1/2 py-2'>Cancelar</Link>
+            <button type='submit' className='rounded-md bg-black text-white text-center hover:underline w-1/2 py-2 flex justify-center'>
               { isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="10" visible={true}/> : <span>Cadastrar</span> }
             </button>
           </div>
