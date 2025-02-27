@@ -5,7 +5,7 @@ import { buscar, deletar } from "../../../services/service"
 import { Alerta } from "../../../utils/Alerta"
 import { RotatingLines } from "react-loader-spinner"
 
-export default function DeletarTreino() {
+function DeletarTreino() {
 
     const navigate = useNavigate()
     const [treino, setTreino] = useState<Treino>({} as Treino)
@@ -74,3 +74,5 @@ export default function DeletarTreino() {
         </div>
     )
 }
+
+export default DeletarTreino;
