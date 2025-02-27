@@ -1,15 +1,16 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server:{
+  server: {
     open: true,
-    host: "0.0.0.0",
+    host: '0.0.0.0', // Permite acesso externo
     port: 3000,
-    preview: {
-      allowedHosts: 'all'
-    }
-  }
-})
+  },
+  preview: {
+    host: '0.0.0.0', // Garante que o servidor de pré-visualização também aceite conexões externas
+    port: 3000,
+    allowedHosts: ['localhost', 'fitness-app-az2k.onrender.com']
+  },
+});
