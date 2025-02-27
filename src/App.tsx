@@ -10,11 +10,11 @@ import { ToastContainer } from 'react-toastify'
 import ListaPlanos from './pages/plano/listaplanos/ListaPlanos'
 import ListaTreino from './pages/treino/listatreino/ListaTreino'
 import FormTreino from './pages/treino/formtreino/formtreino'
-import DeletarTreino from './pages/treino/deletartreino/DeletarTreino'
 import CardPerfil from './pages/perfil/cardperfil/CardPerfil'
 import FormPerfil from './pages/perfil/formperfil/FormPerfil'
 import DeletarPerfil from './pages/perfil/deletarperfil/DeletarPerfil'
 import Sobre from './components/sobre/Sobre'
+import DeletarTreino from './pages/treino/deletartreino/DeletarTreino'
 
 export default function App() {
 
