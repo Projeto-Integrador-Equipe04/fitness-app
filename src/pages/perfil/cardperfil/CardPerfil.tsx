@@ -10,6 +10,7 @@ export default function CardPerfil(){
 
     const { usuario, setUsuario } = useContext(AuthContext)
     const [plano, setPlano] = useState<Plano>()
+    const [imc, setImc] = useState<String>()
     const navigate = useNavigate()
 
     async function buscarUsuario() {
@@ -19,6 +20,18 @@ export default function CardPerfil(){
             Alerta(`Não foi possível buscar o usuário: ${usuario.id}`, "erro")
         }
     }
+
+    async function calcularImc() {
+        try {
+            await buscar(`/usuarios/${usuario.id}/imc`, setImc)
+        } catch (error: any) {
+            Alerta(`Não foi possível buscar o IMC, erro: ${error}`, "erro")
+        }
+    }
+
+    useEffect(() => {
+        calcularImc()
+    }, [usuario]);
 
     useEffect(() => {
         if (usuario?.id) {
@@ -54,6 +67,7 @@ export default function CardPerfil(){
                     <p className='py-4 text-xl text-center h-full'>Nome: {usuario.nome}</p>
                     <p className='py-4 text-xl text-center h-full'>Altura: {usuario.altura}m</p>
                     <p className='py-4 text-xl text-center h-full'>Peso: {usuario.peso}kg</p>
+                    <p className='py-4 text-xl text-center h-full'>{imc}</p>
                     <p className='py-4 text-xl text-center h-full'>Plano: {plano?.nomePlano}</p>
                     <div className="flex">
                     <Link to={`/editarperfil/${usuario.id}`}
